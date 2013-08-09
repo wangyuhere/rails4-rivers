@@ -1,0 +1,28 @@
+
+.rivers-list {
+
+}
+
+.river-pearls {
+  #pearls {
+    display: none;
+    list-style-type: none;
+
+    .pearl {
+      width: 250px;
+      margin-bottom: 10px;
+      background-color: white;
+      padding: 8px 8px 8px 8px;
+
+      img.center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

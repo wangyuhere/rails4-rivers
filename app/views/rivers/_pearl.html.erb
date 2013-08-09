@@ -1,0 +1,19 @@
+<li class="pearl">
+  <div class="web-image">
+    <a href="<%= pearl.url %>" target="_blank">
+      <img class="center" src="<%= pearl.image %>" alt="image" width="200">
+    </a>
+  </div>
+  <div class="text">
+    <h3 class="">
+      <a href="<%= pearl.url %>" target="_bank"><%= pearl.header %></a>
+    </h3>
+    <p class="date text-center">
+      <%= "#{pearl.published_at}" %>
+    </p>
+    <p class="description">
+      <%= pearl.summary %>
+    </p>
+  </div>
+  <%= pearl.header %>
+</li>

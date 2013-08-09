@@ -1,0 +1,17 @@
+= README
+
+== Install and Run
+
+  git clone git@github.com:wangyuhere/rails4-rivers.git
+  cd rails4-riveres
+  bundle
+  rake db:migrate
+  rake db:seed
+  rails s
+
+then goto http://localhost:3000/
+
+== Test
+
+  rake db:migrate RAILS_ENV=test
+  rspec

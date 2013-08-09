@@ -1,0 +1,8 @@
+<div id="rivers-list">
+  <h1>Rivers List</h1>
+  <ul>
+    <% @rivers.each do |river| %>
+    <li><a href="<%= river_path(river) %>"><%= river.name %></a></li>
+    <% end %>
+  </ul>
+</div>

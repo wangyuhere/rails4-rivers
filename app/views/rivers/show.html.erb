@@ -1,0 +1,10 @@
+<div class="river-pearls">
+  <div class="loading">
+    loading...
+  </div>
+  <ul id="pearls">
+    <% @river.pearls.each do |p| %>
+    <%= render partial: 'pearl', locals: { pearl: p } %>
+    <% end %>
+  </ul>
+</div>
