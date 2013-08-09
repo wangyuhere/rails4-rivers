@@ -1,8 +1,11 @@
 <div class="river-pearls">
+  <div>
+    <button class="js-add">Test Prepend</button>
+  </div>
   <div class="loading">
     loading...
   </div>
-  <ul id="pearls">
+  <ul id="pearls" data-id="<%= @river.id %>">
     <% @river.pearls.each do |p| %>
     <%= render partial: 'pearl', locals: { pearl: p } %>
     <% end %>

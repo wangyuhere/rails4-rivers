@@ -2,11 +2,11 @@
 
 FactoryGirl.define do
   factory :pearl do
-    river_id 1
-    url "MyString"
-    header "MyString"
-    summary "MyText"
-    image "MyString"
-    published_at "2013-08-08 20:11:52"
+    river
+    url "http://test.com"
+    header "header"
+    summary "summary"
+    image "test.png"
+    published_at Time.now
   end
 end
