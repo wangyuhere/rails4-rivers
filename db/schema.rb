@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130808203250) do
+ActiveRecord::Schema.define(version: 20130815075331) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "pearls", force: true do |t|
     t.integer  "river_id"
@@ -28,10 +31,12 @@ ActiveRecord::Schema.define(version: 20130808203250) do
 
   create_table "rivers", force: true do |t|
     t.string   "name"
-    t.string   "url"
+    t.string   "old_url"
     t.datetime "fetched_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "channel_ids"
+    t.string   "api_key"
   end
 
 end

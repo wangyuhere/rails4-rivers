@@ -22,7 +22,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'pg'
   gem 'rspec-rails', '~> 2.4'
   gem 'factory_girl_rails', '~> 4.0'
 end

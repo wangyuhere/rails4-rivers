@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+River.delete_all
+Pearl.delete_all
 
-River.where(url: 'http://www.mynewsdesk.com/partner/api/1_0/LY6eZJ5rZDqDuzBQWBHbVA/channel/607/material/list').first_or_create(name: 'Nile')
+River.create(name: "Nile", api_key: 'LY6eZJ5rZDqDuzBQWBHbVA', channel_ids: [607])
 Rake::Task['rivers:fetch_pearls'].invoke
