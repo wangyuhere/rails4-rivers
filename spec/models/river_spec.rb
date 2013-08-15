@@ -3,6 +3,13 @@ require 'spec_helper'
 describe River do
   let(:river) { FactoryGirl.create :river }
 
+  describe ".generate_url" do
+    it "should generate the full url from api key and channel id" do
+      expect(River.generate_url("key", 1))
+      .to eql("http://www.mynewsdesk.com/partner/api/1_0/key/channel/1/material/list")
+    end
+  end
+
   context 'add_pearl_from_item' do
     let(:item) { {
       id: '123',
@@ -41,6 +48,31 @@ describe River do
       item_with_same_id[:type_of_media] = 'image'
       river.add_pearl_from_item item_with_same_id
       expect(river.pearls.count).to eql(2)
+    end
+  end
+
+  describe "channel_ids" do
+    it "should return array of channel ids" do
+      expect(river.channel_ids).to be_a(Array)
+    end
+
+    it "should default to an empty array" do
+      expect(River.new.channel_ids).to eql []
+    end
+  end
+
+  describe "channel_ids=" do
+    it "accept an array" do
+      river.channel_ids = [1,2]
+      expect(river.channel_ids).to eql [1,2]
+    end
+  end
+
+  describe "urls" do
+    it "should return array of urls for channel ids" do
+      river.channel_ids = [1, 2]
+      result = [1, 2].map { |i| River.generate_url river.api_key, i }
+      expect(river.urls).to eql(result)
     end
   end
 end
