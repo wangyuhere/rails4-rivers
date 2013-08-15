@@ -24,5 +24,4 @@ class River < ActiveRecord::Base
   def url_from_channel_id(channel_id)
     River.generate_url api_key, channel_id
   end
-
 end
