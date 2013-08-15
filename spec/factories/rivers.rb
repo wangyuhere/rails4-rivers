@@ -3,6 +3,7 @@
 FactoryGirl.define do
   factory :river do
     sequence(:name) { |n| "river-#{n}"}
-    sequence(:url) { |n| "http://test.com/channel/#{n}"}
+    api_key 'key'
+    sequence(:channel_ids) { |n| [n] }
   end
 end
