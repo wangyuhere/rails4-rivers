@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130808203250) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "pearls", force: true do |t|
     t.integer  "river_id"
     t.string   "url"
