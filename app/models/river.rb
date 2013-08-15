@@ -1,8 +1,6 @@
 class River < ActiveRecord::Base
 
-  has_many :pearls,
-    -> { order 'published_at desc' },
-    class_name: 'Pearl'
+  has_many :pearls
 
   # add pearl from item to river
   # if item already saved, fetch and return pearl directly
@@ -10,7 +8,7 @@ class River < ActiveRecord::Base
     params = item.clone
     params[:item_id] = item[:id]
     params.delete :id
-    pearls.where(item_id: item[:id]).first_or_create(params)
+    pearls.where(item_id: item[:id], type_of_media: item[:type_of_media]).first_or_create(params)
   end
 
 end

@@ -34,5 +34,13 @@ describe River do
       expect(pearl).to eql(old_pearl)
       expect(river.pearls.count).to eql(old_count)
     end
+
+    it "should add pearl if items have same id and with different type_of_media" do
+      river.add_pearl_from_item item
+      item_with_same_id = item.clone
+      item_with_same_id[:type_of_media] = 'image'
+      river.add_pearl_from_item item_with_same_id
+      expect(river.pearls.count).to eql(2)
+    end
   end
 end
